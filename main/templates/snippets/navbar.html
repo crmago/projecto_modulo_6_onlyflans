@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #e1e3e7;" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="static/img/logo_onlyflans.png" alt="OnlyFlans" width="250">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-black" aria-current="page" href="#">Bienvenidos</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Nuestros Flanes
+          </a>
+          <ul class="dropdown-menu">
+            {% for postre in postres %}
+            <li><a class="dropdown-item" href="#">{{ postre.nombre }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-black" href="#">Acerca de Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-black" aria-current="page" href="#">Contacto</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,25 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="text-center" style="color: #4169e1;">{{ titulo }}</h2>
+  <div class="row mt-4 mb-3">
+      {% for postre in postres %}
+      <div class="col-12 col-md-3 mb-4">
+        <div class="card h-100 mx-auto" style="width: 18rem;">
+          <img src="{{ postre.imagen_url }}" class="card-img-top" alt="...">
+          <div class="card-body text-center d-flex flex-column">
+            <h5 class="card-title flex-fill">{{ postre.nombre }}</h5>
+            <p class="card-text flex-fill">{{ postre.descripcion }}</p>
+            <p class="card-text flex-fill">Precio: ${{ postre.precio }}</p>
+          </div>
+          <div class="card-body">
+            <a href="#" class="card-link">Más información</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}
