@@ -1,47 +1,40 @@
-<footer class="bg-dark text-white mt-5">
+{% load static %}
+<footer class="text-black mt-5" style="background-color: rgba(80, 77, 77, 0.2);">
   <div class="container p-4">
     <div class="row">
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <img src="static/img/logo_onlyflans.png" alt="OnlyFlans" width="300">
+        <img src="{% static 'img/logo_onlyflans.png' %}" alt="OnlyFlans" width="300">
         <p>
           Bienvenidos a OnlyFlans. Llevamos amor y productos de la mejor calidad a tus seres queridos, directo desde
           nuestra cocina a tu hogar.
         </p>
       </div>
 
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0"  style="background-color: rgba(221, 211, 211, 0.2);">
-        <h5 class="text-uppercase">Enlaces útiles</h5>
-        <ul class="list-unstyled mb-0">
-          <li>
-            <a href="#!" class="text-white">Inicio</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Sobre nosotros</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Recetas</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Contacto</a>
-          </li>
-        </ul>
-      </div>
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0 d-flex align-items-center justify-content-center"
+        style="background-color: rgba(221, 211, 211, 0.2); padding: 20px;">
+        <ul class="list-unstyled d-flex justify-content-center align-items-center m-0">
+          <ul class="list-unstyled d-flex justify-content-center align-items-center m-0">
+            <li class="mx-3">
+              <a href="https://www.facebook.com" target="_blank" class="text-black"><i
+                  class="fab fa-facebook fa-3x"></i></a>
+            </li>
+            <li class="mx-3">
+              <a href="https://twitter.com" target="_blank" class="text-black"><i class="fa-brands fa-x-twitter fa-3x"></i></i></a>
+            </li>
+            <li class="mx-3">
+              <a href="https://www.instagram.com" target="_blank" class="text-black"><i
+                  class="fab fa-instagram fa-3x"></i></a>
+            </li>
+            <li class="mx-3">
+              <a href="https://www.youtube.com" target="_blank" class="text-black"><i
+                  class="fab fa-youtube fa-3x"></i></a>
+            </li>
+            <li class="mx-3">
+              <a href="https://www.tiktok.com" target="_blank" class="text-black"><i
+                  class="fab fa-tiktok fa-3x"></i></a>
+            </li>
+          </ul>
 
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="background-color: rgba(221, 211, 211, 0.2);">
-        <h5 class="text-uppercase mb-0">Síguenos</h5>
-        <ul class="list-unstyled">
-          <li>
-            <i class="fa-brands fa-facebook"></i>
-          </li>
-          <li>
-            <a href="#!" class="text-white"><i class="fab fa-twitter"></i> Twitter</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white"><i class="fab fa-instagram"></i> Instagram</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white"><i class="fab fa-youtube"></i> YouTube</a>
-          </li>
         </ul>
       </div>
     </div>

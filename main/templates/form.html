@@ -1,0 +1,42 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12 ">
+      <h2 style="padding: 2rem;text-align: center;">¿Como podemos ayudarte?</h2>
+      <div class="mx-auto">
+        <form>
+          <div class="row mx-auto">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="exampleInputNombre" aria-describedby="nombreHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="exampleInputMensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="exampleInputMensaje" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Enviar</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12 mx-auto d-none d-md-block mt-5">
+      <div class="image-container">
+        <img src="https://www.clarin.com/2023/04/24/YA7LERYcg_1200x0__1.jpg"
+          style="width: 70%;border-radius: 10px;margin-left: 90px" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

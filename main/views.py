@@ -10,8 +10,20 @@ def indice(req):
     }
     return render(req, 'index.html', context)
 
-def acerca(req, id):
-    return render(req, 'about.html')
+def acerca(req):
+    context = {
+        'postres': postres, 
+    }
+    return render(req, 'about.html', context)
 
-def bienvenido(req): 
-    return render(req, 'welcome.html')
+def bienvenido(req):
+    context = {
+        'postres': postres,
+    }
+    return render(req, 'welcome.html', context)
+
+def contacto(req):
+    context = {
+        'postres': postres,
+    }
+    return render(req, 'form.html', context)
