@@ -9,31 +9,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link active text-black" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link active text-black" aria-current="page" href="{% url 'bienvenido' %}">Bienvenidos</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle text-black" href="{% url '' %}" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Nuestros Flanes
-          </a>
-          <ul class="dropdown-menu">
-            <a class="dropdown-item" href="{% url '' %}">Lista de Flanes</a>
-            {% for postre in postres %}
-            <li><a class="dropdown-item" href="#">{{ postre.nombre }}</a></li>
-            {% endfor %}
-          </ul>
-        </li>
         <li class="nav-item">
-          <a class="nav-link active text-black" href="{% url 'acerca' %}">Acerca de Nosotros</a>
+          <a class="nav-link active text-black" href="{% url 'acerca' %}">Acerca</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active text-black" aria-current="page" href="{% url 'contacto' %}">Contacto</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-secondary" type="submit">Buscar</button>
       </form>
     </div>
   </div>

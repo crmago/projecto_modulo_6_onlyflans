@@ -1,0 +1,29 @@
+.container-w h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  color: rgb(73, 15, 231);
+  text-align: center;
+  padding: 20px;
+}
+
+#img-w {
+  width: 80%;
+  border-radius: 5%;
+}
+
+.col-6 h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  color: rgb(48, 240, 80);
+  text-align: center;
+
+}
+
+#image-f {
+  width: 100%;
+  border-radius: 5%;
+  margin-top: 2rem;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}

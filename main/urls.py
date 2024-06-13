@@ -1,9 +1,9 @@
 from django.urls import path
-from main.views import indice, acerca, bienvenido, contacto
+from main.views import contacto, indice, acerca, bienvenido, contact_form
 
 urlpatterns = [
-    path('', indice, name=''),
+    path('', indice, name='inicio'),
     path('acerca/', acerca, name='acerca'),
     path('bienvenido/', bienvenido, name='bienvenido'),
-    path('contacto/', contacto, name='contacto'),
+    path('contacto/', contact_form, name='contacto'),
 ]
