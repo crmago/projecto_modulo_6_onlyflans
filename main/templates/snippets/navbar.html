@@ -10,22 +10,39 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
-          <a class="nav-link active text-black" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+          <a class="nav-link active" style="color: #444c53;" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link active" style="color: #444c53;" aria-current="page"
+            href="{% url 'bienvenido' %}">Bienvenidos</a>
+        </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link active" style="color: #444c53;" href="{% url 'acerca' %}">Acerca</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-black" aria-current="page" href="{% url 'bienvenido' %}">Bienvenidos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active text-black" href="{% url 'acerca' %}">Acerca</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active text-black" aria-current="page" href="{% url 'contacto' %}">Contacto</a>
+          <a class="nav-link active" style="color: #444c53;" aria-current="page"
+            href="{% url 'contacto' %}">Contacto</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-secondary" type="submit">Buscar</button>
-      </form>
+      <div class="account-icon">
+        <div class="account-options">
+          <i class="fa-solid fa-user"></i>
+          {% if user.is_authenticated %}
+          <span>Hola {{ user.username }}</span>
+          <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="logout-link btn btn-danger" id="logoutButton">Cerrar Sesión
+            </button>
+          </form>
+          {% else %}
+          <span class="account-text" style="color: #444c53;">Mi cuenta</span>
+          <a href="{% url 'login' %}" class="login-link btn btn-success" id="loginButton">Iniciar Sesión</a>
+          <a href="#" class="register-link btn btn-info" id="registerButton">Registrarse</a>
+          {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 </nav>

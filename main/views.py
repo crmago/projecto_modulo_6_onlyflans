@@ -1,32 +1,32 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+from .models import Flan
 from .forms import ContactFormModelForm
-from main.postres import postres
+from django.contrib.auth.decorators import login_required
 
 def indice(req):
+    # Obtener todos los flanes privados de la base de datos
+    flanes = Flan.objects.filter(is_private=False)
     context = {
         'titulo': 'Nuestros Flanes',
-        'postres': postres,
+        'flanes': flanes,
     }
     return render(req, 'index.html', context)
 
 def acerca(req):
-    context = {
-        'postres': postres, 
-    }
-    return render(req, 'about.html', context)
+    
+    return render(req, 'about.html')
 
-def bienvenido(req):
+@login_required
+def bienvenido(request):
+    # Obtener todos los flanes de la base de datos si es necesario
+    flanes = Flan.objects.all()
     context = {
-        'postres': postres,
+        'flanes': flanes,
     }
-    return render(req, 'welcome.html', context)
+    return render(request, 'welcome.html', context)
 
 def contacto(req):
-    context = {
-        'postres': postres,
-    }
-    return render(req, 'contacto.html', context)
-
+    return render(req, 'contacto.html')
 
 def contact_form(req):
     if req.method == 'POST':
@@ -41,4 +41,6 @@ def contact_form(req):
         errores = []
 
     return render(req, 'form.html', {'form': form, 'errores': errores})
+
+
 

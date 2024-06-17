@@ -27,3 +27,136 @@
   color: red;
   font-weight: bold;
 }
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  padding: 1rem;
+}
+
+.card-footer h4 {
+  margin-bottom: 0;
+}
+
+.card-footer h4 .precio {
+  color: rgb(207, 8, 8);
+  font-weight: bold;
+}
+
+.account-options {
+  display: flex;
+  align-items: center;
+}
+
+.account-options span {
+  font-family: "Poppins", sans-serif;
+  margin-right: 10px;
+}
+
+.account-options i {
+  margin-right: 10px;
+}
+
+#registerButton {
+  margin-left: 10px;
+}
+
+.collapse a {
+  font-family: "Poppins", sans-serif;
+}
+
+.zoom-card {
+  transition: transform 0.3s ease;
+}
+
+.zoom-card:hover {
+  transform: scale(1.1);
+}
+
+@keyframes trackingInOut {
+
+  0%,
+  100% {
+    letter-spacing: 0em;
+  }
+
+  50% {
+    letter-spacing: 0.2em;
+  }
+}
+
+.tracking-text {
+  text-align: center;
+  animation: trackingInOut 4s;
+  font-size: 2em;
+}
+
+
+.lista-footer {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 40px;
+  list-style-type: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.footer-item {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.lista-footer i {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #337ab7; /* Color de los íconos */
+}
+
+/* Estilos específicos para cada tipo de ícono */
+.lista-footer .fa-phone-alt {
+  color: #5cb85c; /* Color verde */
+}
+
+.lista-footer .fa-clock {
+  color: #f0ad4e; /* Color amarillo */
+}
+
+.lista-footer .fa-store-alt {
+  color: #d9534f; /* Color rojo */
+}
+
+
+/* Archivo styles.css */
+
+
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.informacion {
+  margin-top: 20px;
+}
+
+h2 {
+  color: #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+#img-a {
+  width: 100%;
+  border-radius: 5%;
+  margin-top: 2rem;
+}

@@ -3,23 +3,25 @@
 
 {% block content %}
 <div class="container mt-4">
-  <h2 class="text-center" style="color: #4169e1;">{{ titulo }}</h2>
-  <div class="row mt-4 mb-3">
-      {% for postre in postres %}
-      <div class="col-12 col-md-3 mb-4">
-        <div class="card h-100 mx-auto" style="width: 18rem;">
-          <img src="{{ postre.imagen_url }}" class="card-img-top" alt="...">
-          <div class="card-body text-center d-flex flex-column">
-            <h5 class="card-title flex-fill">{{ postre.nombre }}</h5>
-            <p class="card-text flex-fill">{{ postre.descripcion }}</p>
-            <p class="card-text flex-fill">Precio: ${{ postre.precio }}</p>
-          </div>
-          <div class="card-body">
-            <a href="#" class="card-link">Más información</a>
-          </div>
+  <h2 class="text-center" style="color: #4169e1; padding: 2%;">{{ titulo }}</h2>
+  <div class="row row-cols-1 row-cols-md-4 mt-4 mb-3">
+    {% for flan in flanes %}
+    <div class="col mb-4">
+      <div class="card h-100 mx-auto zoom-card">
+        <img src="{{ flan.imagen_url }}" class="card-img-top" alt="{{ flan.nombre }}">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ flan.nombre }}</h5>
+          <p class="card-text">{{ flan.descripcion }}</p>
+        </div>
+        <div class="card-footer text-center">
+          <h4 class="card-text">
+            <span class="precio">${{ flan.precio }}</span>
+          </h4>
+          <a href="#" class="card-link">Más información</a>
         </div>
       </div>
-      {% endfor %}
+    </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}
