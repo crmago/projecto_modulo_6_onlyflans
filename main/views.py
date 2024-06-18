@@ -42,5 +42,3 @@ def contact_form(req):
 
     return render(req, 'form.html', {'form': form, 'errores': errores})
 
-
-

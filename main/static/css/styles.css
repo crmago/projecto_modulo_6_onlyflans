@@ -113,12 +113,12 @@
 .lista-footer i {
   margin-right: 10px;
   font-size: 18px;
-  color: #337ab7; /* Color de los íconos */
+  color: #337ab7;
 }
 
 /* Estilos específicos para cada tipo de ícono */
 .lista-footer .fa-phone-alt {
-  color: #5cb85c; /* Color verde */
+  color: #5cb85c;
 }
 
 .lista-footer .fa-clock {

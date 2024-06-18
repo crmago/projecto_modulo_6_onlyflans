@@ -4,29 +4,36 @@
 
 {% block content %}
 <div class="container mt-4">
+  <header class="row mb-4">
+    <div class="col text-center">
+      <h1>¿En que te podemos ayudar?</h1>
+    </div>
+  </header>
+
   <div class="row">
     <div class="col-12 col-lg-6">
 
       <form method="post">
         {% csrf_token %}
         {% for field in form %}
-          <div class="mb-3">
-            {{ field.label_tag }}
-            {{ field }}
-            {% if field.errors %}
-              <div class="text-danger mt-1">
-                {% for error in field.errors %}
-                  {{ error|escape }}
-                {% endfor %}
-              </div>
-            {% endif %}
+        <div class="mb-3">
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.errors %}
+          <div class="text-danger mt-1">
+            {% for error in field.errors %}
+            {{ error|escape }}
+            {% endfor %}
           </div>
+          {% endif %}
+        </div>
         {% endfor %}
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
     </div>
     <div class="col-6 d-none d-lg-block">
-      <img id="image-f" src="https://www.annarecetasfaciles.com/files/flan-nata-1-scaled.jpg" class="img-fluid" alt="Flan">
+      <img id="image-f" src="https://www.annarecetasfaciles.com/files/flan-nata-1-scaled.jpg" class="img-fluid"
+        alt="Flan">
     </div>
   </div>
 </div>
