@@ -2,6 +2,11 @@ from django.shortcuts import redirect, render
 from .models import Flan
 from .forms import ContactFormModelForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.views import LoginView
+from django.contrib import messages
+from django.contrib.auth.views import LogoutView
+
 
 def indice(req):
     # Obtener todos los flanes privados de la base de datos
@@ -41,4 +46,22 @@ def contact_form(req):
         errores = []
 
     return render(req, 'form.html', {'form': form, 'errores': errores})
+
+class LoginViewPropia(SuccessMessageMixin ,LoginView):
+    success_message = 'Has ingresado correctamente'
+
+
+class LogoutViewPropio(LogoutView):
+    next_page = '/'  # Página a la que redirigir después del logout
+
+    def dispatch(self, request, *args, **kwargs):
+        # Llama al método padre (LogoutView) para realizar el logout
+        response = super().dispatch(request, *args, **kwargs)
+
+        # Muestra el mensaje de éxito usando el sistema de mensajes de Django
+        messages.success(self.request, 'Has cerrado sesión correctamente.')
+
+        return response
+
+
 

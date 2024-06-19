@@ -30,7 +30,7 @@
 
 <body>
   <div class="container">
-    <header class="container" style="background-color: rgb(241, 212, 238);">
+    <header class="container" style="background-color: rgb(252, 250, 251);">
       <div class="text-center p-4" id="logo-container">
         <img src="{% static 'img/logo_onlyflans.png' %}" alt="OnlyFlans" width="250" id="logo">
       </div>
@@ -41,6 +41,27 @@
     {% endblock %}
   </div>
   <div class="container" style="margin-top: 2rem;">
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row message-row justify-content-start">
+      <div id="alert" class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif%}
+
+    {% if logout_message %}
+    <div class="row message-row justify-content-start">
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ logout_message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+    {% endif %}
+
     <main>
       {% block content %}
       <p>Este es el bloque CONTENT del template base</p>
@@ -61,7 +82,39 @@
 
   <script src="{% static 'js/script.js' %}"></script>
 
+  <script>
+    // Script para remover el mensaje después de 5 segundos
+    document.addEventListener("DOMContentLoaded", function () {
+      var alertElement = document.querySelector(".alert");
+      var logoutAlertElement = document.querySelector(".alert");
 
+      // Función para remover el mensaje
+      function removeAlert(alertElement) {
+        alertElement.classList.remove("show");
+        setTimeout(function () {
+          alertElement.remove();
+        }, 1000); // Espera un segundo después de desvanecerse para eliminarlo
+      }
+
+      // Remover el mensaje cuando se hace clic en el botón de cerrar
+      document.querySelectorAll(".btn-close").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var parentAlert = this.closest(".alert");
+          removeAlert(parentAlert); // Llama a la función para remover el mensaje
+        });
+      });
+
+      // Remover el mensaje después de 5 segundos automáticamente
+      setTimeout(function () {
+        if (alertElement) {
+          removeAlert(alertElement); // Llama a la función para remover el mensaje de login si existe
+        }
+        if (logoutAlertElement) {
+          removeAlert(logoutAlertElement); // Llama a la función para remover el mensaje de logout si existe
+        }
+      }, 5000); // 5000 milisegundos = 5 segundos
+    });
+  </script>
 
   {% block js %}
   {% endblock %}
